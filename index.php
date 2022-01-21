@@ -51,7 +51,12 @@
 	}
   </style>
 	<body>
-	<h2>Database Tables</h2>
+	<h1>An example of Database Visualization.</h1>
+
+	<h2>The Database</h2>
+	<p>Suppose we have a customer who has an email, id and password. Each customer can place an order, which is associated with a customer, item, confirmation number and date placed. Each item has a name, price and item id.</p> 
+	
+	<h2>The Database Tables</h2>
 <?php
 
 	// return connection to database
@@ -115,10 +120,19 @@
 	printTable("item", 3);
 ?> 
 	<h2> Example Queries </h2>
-	<p>1. SELECT * FROM ItemOrder; <button id="btn1">Query</button></p>
-	<p>2. SELECT * FROM customer WHERE Email = Guest@mail.com; <button id="btn2">Query</button></p>
-	<p>3. SELECT Name, Price FROM item WHERE Price > 9.99; <button id="btn3">Query</button></p>
-	<p>4. SELECT Name, Price FROM item, ItemOrder, customer WHERE Email = 'Guest@mail.com' AND customer.CustomerID = ItemOrder.CustomerID AND ItemOrder.ItemID = item.ItemID;  <button id="btn4">Query</button></p>
-	
+	<ol>
+		<li>SELECT * FROM ItemOrder; <button id="btn1">Query</button></li>
+		<li>SELECT * FROM customer WHERE Email = 'Guest@mail.com'; <button id="btn2">Query</button></li>
+		<li>SELECT Name, Price FROM item WHERE Price > 9.99; <button id="btn3">Query</button></li>
+		<li>SELECT Name, Price FROM item, ItemOrder, customer WHERE Email = 'Guest@mail.com' AND customer.CustomerID = ItemOrder.CustomerID AND ItemOrder.ItemID = item.ItemID;  <button id="btn4">Query</button></li>
+	</ol>
+
+	<h2> English Translation </h2>
+	<ol>
+		<li>Print all items.</li>
+		<li>Print the customer who's email is "Guest@mail.com".</li>
+		<li>Print the name and price of items which price is greater than 9.99.</li>
+		<li>Print the name and price of all the items from "Guest@mail.com".
+	</ol>
 	</body>
 </html>
